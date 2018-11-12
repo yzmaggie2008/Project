@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Corkboard</title>
+    <!--Bootstrap CDN-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <!--CSS-->
+    <link rel="stylesheet" href="../css/main.css">
+    <!--jQuery-->
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <!--fontawesome, for thumb icon-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+    <div class="table-pages">
+        <div class="card">
+            <div class="card-header">view Pushpin</div>
+            <div class="card-body">
+                <div class="text-right">
+                    <a href="home-page.html">
+                        <h2 class="card-title text-success">CordboardIt</h2>
+                        <h6 class="card-subtitle">Explore .Share. Inspire</h6>
+                    </a>
+                    <br>
+                </div>
+                <hr>
+                <!--start of pushpin content-->
+                <p class="card">
+                    <div class="card-header">
+                        <div class="d-flex flex-row">
+                            <h2 id="pushpin-user-name" class=""><strong></strong></h2>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                            <div class="follow"><button class="follow-btn btn btn-outline-primary">Follow</button></div>
+                        </div>
+                        <div class="d-flex flex-row">
+                            <div class="flex-grow-1">Pinned <span id="pushpin-date"></span>
+                                at <span id="pushpin-time"></span>
+                                on <strong><span id="corkboard-title"></span></strong>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <p class="text-right">from <span id="pushpin-domain"></span></p>
+                        <div id="pushpin-img"></div>
+                        <p>
+                            <div id="description"></div>
+                            <!--Start of tags-->
+                            <p>Tags: <strong><span id="tags"></span></strong></p>
+                            <!--End of tags-->
+                        </p>
+                        <hr>
+                        <!--Start of likelist-->
+                        <div class="d-flex flex-row">
+                            <i class="far fa-thumbs-up"></i> <span class="flex-grow-1" id="like-name"> </span>
+                            <div id="like">
+                                <button id="like-btn" class="btn btn-outline-primary">Like!</button>
+                                <button id="unlike-btn" class="btn btn-outline-secondary">UnLike</button>
+                            </div>
+                        </div>
+                        <!--End of likelist-->
+                    </div>
+                    <div class="card-footer">
+                        <form id="search-form" class="form-inline row">
+                            <input class="form-control col-9" id="search" type="text" name="comment" placeholder="Enter Comment">
+                            <input class="btn btn-primary col-2" type="submit" value ="Post Comment">
+                        </form>
+                        <!--Start display comment-->
+                        <div id="comment-list">
+
+                        </div>
+                        <!--End display comment-->
+                    </div>
+                </div>
+                <!--End of pushpin content-->
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../javacript/view-pushpin.js"></script>
+</body>
+</html>

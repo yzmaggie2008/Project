@@ -1,0 +1,57 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: guangting
+ * Date: 10/12/18
+ * Time: 1:28 PM
+ */
+// required headers
+header("Access-Control-Allow-Origin: *");
+header("Content-Type: application/json; charset=UTF-8");
+
+// include database and object files
+include_once '../config/database.php';
+include_once '../objects/Pushpin.php';
+
+// instantiate database and product object
+$database = new Database();
+$db = $database->getConnection();
+
+// initialize object
+$pushpin = new Pushpin($db);
+
+// query products
+$stmt = $pushpin->popular_tags();
+$num = $stmt->rowCount();
+
+// check if more than 0 record found
+if($num>0){
+
+    // site's array
+    $sites_arr=array();
+
+    // retrieve our table contents
+    // fetch() is faster than fetchAll()
+    // http://stackoverflow.com/questions/2770630/pdofetchall-vs-pdofetch-in-a-loop
+    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+        // extract row
+        // this will make $row['name'] to
+        // just $name only
+        extract($row);
+
+        $sites_item=array(
+            "tags" => $tags,
+            "pushpins" => $pushpins,
+            "unique_corkboards" => $unique_corkboards
+        );
+        array_push($sites_arr, $sites_item);
+    }
+
+    echo json_encode($sites_arr);
+}
+
+else{
+    echo json_encode(
+        array("message" => "No pushpin tag info found.")
+    );
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Corkboard</title>
+    <!--Bootstrap CDN-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <!--CSS-->
+    <link rel="stylesheet" href="../css/main.css">
+    <!--jQuery-->
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="add-pages">
+        <div class="card">
+            <div class="card-header">Add corkboard</div>
+            <div class="card-body">
+                <div class="title-center">
+                    <h2 class="card-title">CordboardIt</h2>
+                    <h6 class="card-subtitle">Explore .Share. Inspire</h6>
+                    <br>
+                </div>
+                <form id="add-corkboard" class="text-left" action='../../api/Corkboard/add_corkboard.php' method="POST">
+                    <div class="form-group row">
+                        <label for="title" class="col-2 col-form-label">Title</label>
+                        <div class="col-10">
+                            <input id="title" class="form-control" type="text" name="title" required>
+                        </div>
+                    </div>
+                    <!--start of category-->
+                    <!--source: https://getbootstrap.com/docs/4.0/components/input-group/-->
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="inputGroupSelect01">Category</label>
+                        </div>
+                        <select class="custom-select" name="category" id="inputGroupSelect01">
+                            <!--categories are fetched here-->
+                        </select>
+                    </div>
+                    <!--end of category-->
+                    <div class="form-group" id="permission">
+                        <div class="row">
+                            <div class="col-12">
+                                <input type="radio" name="permission" value="public" checked>Public<br>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-3">
+                                <input type="radio" name="permission" value="private"> Private
+                            </div>
+                            <div class="col-9">
+                                <input class="form-control" id="password" type="password" name="password" placeholder = "Enter Password">
+                            </div>
+                        </div>
+                        <br>
+                        <input id="add-btn" class="btn btn-primary float-right" type="submit" value ="Add">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<script src="../javacript/add-corkboard.js"></script>
+</body>
+</html>

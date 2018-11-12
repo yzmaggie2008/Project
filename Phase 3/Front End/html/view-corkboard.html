@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Corkboard</title>
+    <!--Bootstrap CDN-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <!--CSS-->
+    <link rel="stylesheet" href="../css/main.css">
+    <!--jQuery-->
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="table-pages">
+        <div class="card">
+            <div class="card-header">View Corkboard</div>
+            <div class="card-body">
+                <div class="text-right">
+                    <a href="home-page.html">
+                        <h2 class="card-title text-success">CordboardIt</h2>
+                        <h6 class="card-subtitle">Explore .Share. Inspire</h6>
+                    </a>
+                    <br>
+                </div>
+                <hr>
+                <!--start of corkboard content-->
+                <div class="card">
+                    <div class="card-header">
+                        <div class="d-flex flex-row">
+
+                            <h2 id="corkboard-user-name" class=""><strong></strong></h2>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                            <div class="follow"><button class="follow-btn btn btn-outline-primary">Follow</button></div>
+                            <h4 id="corkboard-category" class="text-right text-primary flex-grow-1 p-2"><strong></strong></h4>
+                        </div>
+                        <h4 id="corkboard-title"></h4>
+                        <div class="d-flex flex-row">
+                            <div class="flex-grow-1">Last Updated <span id="corkboard-date"></span> at <span id="corkboard-time"></span></div>
+                            <button id="add-pushpin-btn" class="btn btn-outline-primary">Add Pushpin</button>
+                        </div>
+                    </div>
+                    <!--start of images-->
+                    <div class="card-body">
+                        <!--<div class="row" style="display:flex; flex-wrap: wrap;">-->
+                            <div id="corkboard-img" class="row" style="display:flex; flex-wrap: wrap;"></div>
+                            <!--image insert here-->
+                            </div>
+                    </div>
+                    <!--End of images-->
+                    <div id="watch-area" class="card-footer row">
+                        <div class="col-10">
+                        This Corkboard has <strong><span id="corkboard-watch-num"></span></strong> watchers.
+                        </div>
+                        <div id="watch" class="col-2">
+                            <button id="watch-btn" class="btn btn-outline-primary">Watch</button>
+                        </div>
+                    </div>
+                </div>
+                <!--End of corkboard content-->
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../javacript/view-corkboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+.card-header {
+    text-align: left;
+
+}
+
+.login {
+    position: absolute;
+    height: 200px;
+    width: 600px;
+    margin: -100px 0 0 -200px;
+    top: 20%;
+    left: 40%;
+    text-align: center;
+}
+
+.add-pages {
+    position: absolute;
+    height: 200px;
+    width: 600px;
+    margin: -100px 0 0 -100px;
+    top: 20%;
+    left: 40%;
+    text-align: center;
+}
+
+.table-pages {
+    padding-top: 50px;
+}
+
+#search-form {
+    margin-left: 5%;
+}
+
+#search-form .btn{
+    margin-left: 3%;
+}
+
+.row {
+    margin-left: 1%;
+}
+
+.row .btn {
+    margin-left: 3%;
+}
+
+#follow-btn {
+    margin-left: 10%;
+}
+
+.img-thumbnail {
+    margin: 10px;
+}
